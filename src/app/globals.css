@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
 body {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-inter);
+}
+
+@theme {
+  --color-primary: #367aff;
+  --color-secondary: #4f959d;
+  --color-tertiary: #98d2c0;
+  --color-light: #f2efe7;
+  --color-dark: #213555;
+  --color-subtext: #4b5563;
+  --color-border: #e0e1e4;
+  --color-red: #dc2626;
+  --color-green: #25a925;
 }
