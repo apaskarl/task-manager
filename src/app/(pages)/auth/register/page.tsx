@@ -3,7 +3,9 @@
 import FormButton from "@/components/buttons/FormButton";
 import InputField from "@/components/inputs/InputField";
 import Logo from "@/components/Logo";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import axios from "axios";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -62,15 +64,15 @@ export default function Register() {
   };
 
   return (
-    <div className="grid min-h-screen grid-cols-2">
+    <div className="grid min-h-screen md:grid-cols-2">
       <div className="p-10">
         <Logo />
 
-        <div className="mt-14 space-y-10 self-center px-20">
+        <div className="mt-14 space-y-10 self-center md:px-20">
           <div>
             <h1 className="mb-2 text-lg font-bold">Register an account</h1>
             <p className="text-subtext text-sm">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Sign up to manage your tasks and stay organized
             </p>
           </div>
 
@@ -124,11 +126,28 @@ export default function Register() {
               onClick={handleRegister}
               loading={loading}
             />
+
+            <div className="flex items-center gap-x-5">
+              <div className="bg-border h-[1px] flex-1" />
+              <p className="text-subtext text-sm">or</p>
+              <div className="bg-border h-[1px] flex-1" />
+            </div>
+
+            <button className="border-border flex w-full cursor-pointer items-center justify-center gap-x-3 rounded-xl border py-3 font-semibold duration-300 hover:opacity-50">
+              <Icon icon="logos:google-icon" /> Sign up with Google
+            </button>
           </form>
+
+          <p className="text-subtext text-center text-sm">
+            Already have an account?{" "}
+            <Link href="/auth/login" className="text-primary font-semibold">
+              Log in
+            </Link>
+          </p>
         </div>
       </div>
 
-      <div className="bg-primary">
+      <div className="bg-primary hidden">
         <img src="/assets/images/wallpaper.jpg" className="h-full opacity-90" />
       </div>
     </div>

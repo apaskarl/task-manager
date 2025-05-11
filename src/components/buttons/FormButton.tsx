@@ -20,10 +20,8 @@ export default function FormButton({
       onClick={onClick}
       disabled={loading}
     >
-      {/* Keep label always rendered, hide it visually when loading */}
       <span className={loading ? "invisible" : "visible"}>{label}</span>
 
-      {/* Show loading icon absolutely centered on top */}
       {loading && (
         <span className="absolute inset-0 flex items-center justify-center">
           <Icon icon="line-md:loading-loop" className="size-5" />
