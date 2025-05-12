@@ -5,6 +5,7 @@ import InputField from "@/components/inputs/InputField";
 import Logo from "@/components/Logo";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import axios from "axios";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -65,10 +66,10 @@ export default function Register() {
 
   return (
     <div className="relative flex">
-      <div className="w-1/2 p-10">
+      <div className="w-full p-5 md:w-1/2 md:p-8">
         <Logo />
 
-        <div className="mt-14 space-y-10 self-center md:px-20">
+        <div className="mt-10 space-y-10 self-center md:mt-14 md:px-20">
           <div>
             <h1 className="mb-2 text-lg font-bold">Register an account</h1>
             <p className="text-subtext text-sm">
@@ -140,15 +141,26 @@ export default function Register() {
 
           <p className="text-subtext text-center text-sm">
             Already have an account?{" "}
-            <Link href="/auth/login" className="text-primary font-semibold">
+            <Link
+              href="/auth/login"
+              className="text-primary font-semibold hover:underline"
+            >
               Log in
             </Link>
           </p>
         </div>
       </div>
 
-      <div className="bg-primary fixed right-0 h-screen w-1/2">
-        <img src="/assets/images/wallpaper.jpg" className="h-full opacity-90" />
+      <div className="fixed right-0 hidden h-screen p-2 md:block md:w-1/2">
+        <div className="bg-primary relative h-full w-full overflow-hidden rounded-3xl">
+          <Image
+            src="/assets/images/wallpaper.jpg"
+            alt="Wallpaper"
+            fill
+            className="object-cover opacity-80"
+            priority
+          />
+        </div>
       </div>
     </div>
   );

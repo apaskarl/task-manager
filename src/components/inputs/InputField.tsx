@@ -37,7 +37,7 @@ export default function InputField({
             className="text-subtext absolute top-1/2 right-0 -translate-y-1/2 cursor-pointer p-4 duration-300 hover:opacity-50"
           >
             <Icon
-              icon={showPassword ? "lucide-eye-off" : "lucide-eye"}
+              icon={showPassword ? "ion:eye-off-outline" : "ion:eye-outline"}
               className="size-5"
             />
           </span>
