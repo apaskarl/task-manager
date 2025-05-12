@@ -64,8 +64,8 @@ export default function Register() {
   };
 
   return (
-    <div className="grid min-h-screen md:grid-cols-2">
-      <div className="p-10">
+    <div className="relative flex">
+      <div className="w-1/2 p-10">
         <Logo />
 
         <div className="mt-14 space-y-10 self-center md:px-20">
@@ -147,7 +147,7 @@ export default function Register() {
         </div>
       </div>
 
-      <div className="bg-primary hidden">
+      <div className="bg-primary fixed right-0 h-screen w-1/2">
         <img src="/assets/images/wallpaper.jpg" className="h-full opacity-90" />
       </div>
     </div>
